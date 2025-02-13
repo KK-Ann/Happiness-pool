@@ -1,0 +1,145 @@
+### Organizer 注册测试
+POST http://127.0.0.1:5000/organizer/register
+Content-Type: application/json
+
+{
+    "name": "TestOrganizer",
+    "password": "securepassword",
+    "email": "organizer@example.com"
+}
+
+### Organizer 登录测试
+POST http://127.0.0.1:5000/organizer/login
+Content-Type: application/json
+
+{
+    "name": "TestOrganizer",
+    "password": "securepassword"
+}
+
+### Visitor 注册测试
+POST http://127.0.0.1:5000/visitor/register
+Content-Type: application/json
+
+{
+    "name": "TestVisitor",
+    "password": "securepassword",
+    "email": "visitor@example.com",
+    "favorite_activity_type": "文化类"
+}
+
+### Visitor 登录测试
+POST http://127.0.0.1:5000/visitor/login
+Content-Type: application/json
+
+{
+    "name": "TestVisitor",
+    "password": "securepassword"
+}
+
+### 获取venue测试
+GET http://127.0.0.1:5000/venues
+Content-Type: application/json
+
+### venue_id测试
+POST http://127.0.0.1:5000/venuesDetail
+Content-Type: application/json
+
+{
+    "venue_id": 1
+}
+### 获取所有活动信息
+GET http://127.0.0.1:5000/activities
+Content-Type: application/json
+
+### 获取特定活动详情
+POST http://127.0.0.1:5000/activitiesDetail
+Content-Type: application/json
+
+{
+    "activity_id": "2"
+}
+
+### 发布评论
+POST http://127.0.0.1:5000/addComments
+Content-Type: application/json
+
+{
+    "activity_id": "3",
+    "visitor_id": "1",
+    "content": "This is a test comment"
+}
+### 发布搭子请求
+POST http://127.0.0.1:5000/addPartners
+Content-Type: application/json
+
+{
+    "activity_id": "3",
+    "visitor_id": "1" ,
+    "content": "aaa,要个伙伴啊"
+}
+
+### 获取搭子信息
+POST http://127.0.0.1:5000/visitor_buddy
+Content-Type: application/json
+
+{
+
+    "visitor_id": "1"
+}
+
+### 更改搭子状态
+POST http://127.0.0.1:5000/changeBuddyStatus
+Content-Type: application/json
+
+{
+    "visitor_id": "1",
+    "activity_id": "1",
+    "is_found": true
+}
+### 删除搭子请求
+POST http://127.0.0.1:5000/deleteBuddy
+Content-Type: application/json
+
+{
+    "visitor_id": "1",
+    "activity_id": "1"
+}
+### 获取组织者发布的活动
+POST http://127.0.0.1:5000/organizer_activities
+Content-Type: application/json
+
+{
+    "organizer_id": "1"
+}
+
+### 删除活动
+POST http://127.0.0.1:5000/deleteActivity
+Content-Type: application/json
+
+{
+    "activity_id": "1"
+}
+
+### 获取所有组织者信息
+GET http://127.0.0.1:5000/organizers
+Content-Type: application/json
+
+### 更改组织者状态
+POST http://127.0.0.1:5000/changeOrganizerStatus
+Content-Type: application/json
+
+{
+    "organizer_id": 1,
+    "status": true
+}
+
+### 获取组织者发布的活动信息
+GET http://127.0.0.1:5000/organizer_activities
+Content-Type: application/json
+
+{
+    "organizer_id": "1"
+}
+
+
